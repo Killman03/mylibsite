@@ -1,0 +1,45 @@
+.book_page{
+ margin-top: 20px;
+ height: 100%;
+ width: 100%;
+}
+
+.book_title{
+    color: #000;
+    line-height: 140%;
+    font-size: 20pt;
+    padding: 5px 0;
+    margin: 0;
+    font-weight: 400;
+}
+
+.book_description{
+    padding: 10px 0px;
+    font-size: 11pt;
+    height: auto;
+    overflow: auto;
+}
+
+.property_label{
+    float: left;
+    color: #888;
+    font-size: 12pt;
+    display: block
+}
+
+.book_mosaic_text{
+    margin-top:20px;
+    overflow: hidden;
+}
+
+.book_mosaic_line{
+    background: #49AFD0;
+    height:2px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.share_button img{
+    height: 40px;
+    width: 40px;
+}

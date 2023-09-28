@@ -1,0 +1,32 @@
+.star-widget{
+    position: relative;
+    font-size: 40px;
+    display: inline-block;
+}
+
+.star-widget::before {
+ content: "★★★★★";
+ display: block;
+}
+
+.star-widgets{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    overflow: hidden;
+}
+
+.star_widgets_item{
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+}
+

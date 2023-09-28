@@ -16,10 +16,11 @@ class Author(models.Model):
         verbose_name = 'Автор'
         verbose_name_plural = 'Авторы'
 class Books(models.Model):
-    title = models.CharField("Название", max_length=30)
+    title = models.CharField("Название", max_length=80)
     author = models.ForeignKey('Author', blank=True, null=True, related_name='children', on_delete=models.CASCADE)
-    image = models.ImageField("Обложка", blank=True, upload_to='images/')
-    description = models.CharField("Описание", max_length=200)
+    image = models.ImageField("Обложка", upload_to='images/%Y/%m/%d/')
+    file = models.FileField("Загрузить", upload_to='books/')
+    description = models.CharField("Описание", max_length=1000)
     year = models.IntegerField(null=True, blank=True)
     genre = models.CharField("Жанр", max_length=30)
     language = models.CharField("Язык", max_length=20)
