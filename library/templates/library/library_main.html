@@ -1,0 +1,24 @@
+{% load static %}
+<div class="library_main">
+    <div class="container">
+        <div class="main_phrase">
+            <h4 class="quote">Человек сделан из книг, которые он читает</h4>
+            <p class="author">Ральф Улдо Эмерсон</p>
+        </div>
+        <div>
+            <h2 class="book_mosaic_text_main">
+                <span style="float:left">Вам может понравиться</span>
+            </h2>
+            <div class="book_mosaic_line"></div>
+        </div>
+          <div class="row">
+            {% for book in books %}
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+              <div class="card">
+                <a href="{{ book.get_absolute_url }}"><img src="{{ book.image.url }}" class="card-img-top" alt="Название книги 1"></a>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+    </div>
+</div>

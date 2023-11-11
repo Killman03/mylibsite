@@ -1,0 +1,19 @@
+.btn-primary{
+    --bs-btn-bg: #a12c2f;
+    --bs-btn-border-color: #a12c2f;
+    border-radius: 22px;
+    transition: all .3s;
+    --bs-btn-hover-bg: #a12c2f;
+    --bs-btn-hover-border-color: #a12c2f;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+.form-floating input{
+    height: 40px;
+    padding: 0px 15px;
+    margin-bottom: 10px;
+    width: 100%;
+}

@@ -1,0 +1,131 @@
+{% extends 'home/homebase.html' %}
+{% load static %}
+{% block title %} {{ item.title }} - Встреча {% endblock %}
+{% block header %} {% include 'home/header.html' %} {% endblock %}
+{% block content %}
+  <section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="meeting-single-item">
+                <div class="thumb">
+                  <div class="date">
+                    <h6>{{ meeting.date|date:"b" }} <span>{{ meeting.date|date:"j" }}</span></h6>
+                  </div>
+                  <a href="meeting-details.html"><img src="assets/images/single-meeting.jpg" alt=""></a>
+                </div>
+                <div class="down-content">
+                  <div class="down_content_title_center">
+                  <h4>{{ meeting.title }}</h4>
+                  <p>{{ meeting.details }}</p>
+                  </div>
+                  <div class="description">
+                    {{ meeting.descriptions|safe }}
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-3 offset-lg-1">
+                      <div class="hours">
+                        <h5>Время</h5>
+                        <p>{{ meeting.start_time }}<br>{{ meeting.end_time }}</p>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 offset-lg-1">
+                      <div class="location">
+                        <h5>Место</h5>
+                        <p>{{ meeting.location }}</p>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 offset-lg-1">
+                      <div class="location">
+                        <h5>Для кого?</h5>
+                        <p>{{ meeting.for_who }}</p>
+                      </div>
+                    </div>
+                  </div>
+                    <div class="col-lg-12">
+                      <div class="share">
+                        <h5>Поделиться:</h5>
+                        <ul>
+                          <li><a href="https://facebook.com">Facebook</a>,</li>
+                          <li><a href="https://twitter.com">Twitter</a>,</li>
+                          <li><a href="https://whatsapp.com">WhatsApp</a>,</li>
+                          <li><a href="https://telegram.org">Telegram</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="main-button-red">
+                <a href="{% url 'meetings' %}">Назад к встречам</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/video.js"></script>
+    <script src="assets/js/slick-slider.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+          var
+          direction = section.replace(/#/, ''),
+          reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+          reqSectionPos = reqSection.offset().top - 0;
+
+          if (isAnimate) {
+            $('body, html').animate({
+              scrollTop: reqSectionPos },
+            800);
+          } else {
+            $('body, html').scrollTop(reqSectionPos);
+          }
+
+        };
+
+        var checkSection = function checkSection() {
+          $('.section').each(function () {
+            var
+            $this = $(this),
+            topEdge = $this.offset().top - 80,
+            bottomEdge = topEdge + $this.height(),
+            wScroll = $(window).scrollTop();
+            if (topEdge < wScroll && bottomEdge > wScroll) {
+              var
+              currentId = $this.data('section'),
+              reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+              reqLink.closest('li').addClass('active').
+              siblings().removeClass('active');
+            }
+          });
+        };
+
+        $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+          e.preventDefault();
+          showSection($(this).attr('href'), true);
+        });
+
+        $(window).scroll(function () {
+          checkSection();
+        });
+    </script>
+
+{% endblock %}
+{% block footer %} {% include 'home/footer.html' %} {% endblock %}

@@ -1,11 +1,13 @@
-from django.urls import path, include
+from django.urls import path
 from .views import *
 from django.conf import settings
 from django.conf.urls.static import static
 
+
 urlpatterns = [
-    path("", main, name='library'),
-    path("<int:pk>/", Book_page.as_view(), name='book_page'),
+    path("", LibrayHome.as_view(), name='library_home'),
+    path("<slug:book_slug>/", Book_page.as_view(), name='book_page'),
+    path("add-rating/", AddStarRating.as_view(), name='add_rating'),
 ]
 
 if settings.DEBUG:

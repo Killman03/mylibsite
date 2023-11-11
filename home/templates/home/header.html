@@ -5,15 +5,16 @@
               <div class="col-12">
                   <nav class="main-nav">
                       <!-- ***** Logo Start ***** -->
-                      <a href="index.html" class="logo">
+                      <a href="/" class="logo">
                           BUKVA
                       </a>
                       <!-- ***** Logo End ***** -->
                       <!-- ***** Menu Start ***** -->
                       <ul class="nav">
-                          {% for name in menu_name %}
-                          <li><a href="{% url name.url_name  %}">{{ name.title }}</a></li>
+                          {% for names in menu_name %}
+                          <li><a href="{% url names.url_name  %}">{{ names.name }}</a></li>
                           {% endfor %}
+                          <li class="last"><a href="{% url 'login' %}">Войти</a></li>
                       </ul>
                       <a class='menu-trigger'>
                           <span>Menu</span>

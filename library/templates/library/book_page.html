@@ -1,6 +1,6 @@
 {% extends 'library/librarybase.html' %}
-{% block navbar %} {% include 'library/navbar.html' %} {% endblock %}
-{% block footer %} {% include 'library/footer.html' %} {% endblock %}
+{% block navbar %} {% include 'home/header.html' %} {% endblock %}
+{% block footer %} {% include 'home/footer.html' %} {% endblock %}
 {% load static %}
 
 {% block content %}
@@ -22,68 +22,76 @@
             <div class="book_description" style="text-align:left">
               {{ book.description }}
             </div>
-            <div class="book_details_box">
-              <div class="container text-center">
-                <div class="row row-cols-2">
-                  <div class="book_language">
-                    <div class="property_label">Language:</div>
-                    <div class="col book">{{ book.language }}</div>
-                  </div>
-                  <div class="book_pages">
-                    <div class="property_label">Pages:</div>
-                    <div class="col book">{{ book.pages }}</div>
-                  </div>
-                  <div class="book_year">
-                    <div class="property_label">Year:</div>
-                    <div class="col book">{{ book.year }}</div>
-                  </div>
-                  <div class="book_genre">
-                    <div class="property_label">Genre:</div>
-                    <div class="col book">{{ book.genre }}</div>
-                  </div>
+            <div class="book_details_box d-flex flex-column justify-content-end">
+              <div class="row row-cols-2">
+                <div class="book_language">
+                  <div class="property_label">Language:</div>
+                  <div class="col book">{{ book.language }}</div>
+                </div>
+                <div class="book_pages">
+                  <div class="property_label">Pages:</div>
+                  <div class="col book">{{ book.pages }}</div>
+                </div>
+                <div class="book_year">
+                  <div class="property_label">Year:</div>
+                  <div class="col book">{{ book.year }}</div>
+                </div>
+                <div class="book_genre">
+                  <div class="property_label">Genre:</div>
+                  <div class="col book">{{ book.genre }}</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col">
-            <a href="{{ book.file.url }}" download><button type="button" class="btn btn-outline-secondary">Скачать</button></a>
+        <div class="row my-5">
+          <div class="col download_button">
+            <button type="button" class="btn"><a href="{{ book.file.url }}">Скачать</button></a>
           </div>
           <div class="col">
-            <div class="star-widget">
-              <div class="star-widgets">
-                <input type="radio" name="rate" class="star_widgets_item" id="rate-5">
-                <label for="rate-5" class="star_widgets_label"></label>
-                <input type="radio" name="rate" class="star_widgets_item" id="rate-4">
-                <label for="rate-4" class="star_widgets_label"></label>
-                <input type="radio" name="rate" class="star_widgets_item" id="rate-3">
-                <label for="rate-3" class="star_widgets_label"></label>
-                <input type="radio" name="rate" class="star_widgets_item" id="rate-2">
-                <label for="rate-1" class="star_widgets_label"></label>
-                <input type="radio" name="rate" class="star_widgets_item" id="rate-1">
-                <label for="rate-1" class="star_widgets_label"></label>
+            <form action="{% url 'add_rating' %}">
+              {% csrf_token %}
+              <input type="hidden" value="{{ book.id }}" name="book">
+              <div class="rating">
+                {{ star_form }}
               </div>
+            </form>
+            <div class="star-widget">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
             </div>
           </div>
           <div class="col">
-            <div class="share_button">
-              <a href="{{ telegram_url }}" target="_blank"><img src="{% static 'library/img/telegram.svg' %}"></a>
+            <div class="share_buttons">
+              <a href="https://telegram.me/share/url?url=http://127.0.0.1:8000/{{ book.get_absolute_url }}&text=Привет! Я нашёл этот замечательную книгу, думаю, тебе понравится!" target="_blank">
+                  <i class="bi bi-telegram"></i>
+              </a>
+              <a href="https://api.whatsapp.com/send?text=Привет! Я нашёл этот замечательную книгу, думаю, тебе понравится!%20http://127.0.0.1:8000/{{ book.get_absolute_url }}" target="_blank">
+                  <i class="bi bi-whatsapp"></i>
+              </a>
+              <a href="https://twitter.com/intent/tweet?url=http://127.0.0.1:8000/{{ book.get_absolute_url }}&text=Привет! Я нашёл этот замечательную книгу, думаю, тебе понравится!&via=TWITTER_HANDLE" target="_blank">
+                  <i class="bi bi-twitter-x"></i>
+              </a>
             </div>
           </div>
         </div>
         <div>
           <h2 class="book_mosaic_text">
-            <span style="float:left">You may be interested in</span>
+            <span style="float:left">Вам может понравиться</span>
           </h2>
           <div class="book_mosaic_line"></div>
         </div>
         <div>
           <h2 class="book_mosaic_text">
-            <span style="float:left">Comments</span>
+            <span style="float:left">Комментарии</span>
           </h2>
           <div class="book_mosaic_line"></div>
         </div>
       </div>
   </div>
+</div>
+
 {% endblock %}

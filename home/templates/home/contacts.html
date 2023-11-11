@@ -1,0 +1,54 @@
+{% extends 'home/homebase.html' %}
+{% load static %}
+
+{% block title %} Contacts - {{ item.title }} {% endblock %}
+{% block keywords %} {{ item.keywords }} {% endblock %}
+{% block description %} {{ item.description }} {% endblock %}
+{% block header %} {% include 'home/header.html' %} {% endblock %}
+
+{% block content %}
+<section class="contact-us bg_common" id="contacts">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 align-self-center">
+        <div class="row">
+          <div class="col-lg-12">
+            <form id="contact" action="" method="post">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-lg-12">
+                  <h2>Напиши нам</h2>
+                </div>
+                <div class="contact_form">
+                  {{ form.as_div }}
+                  <input type="submit" value="ОТПРАВИТЬ">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="right-info">
+          <ul>
+            <li>
+              <h6>Почта</h6>
+              <span>{{ item.email }}</span>
+            </li>
+            <li>
+              <h6>Telegram</h6>
+              <span>{{ item.telegram }}</span>
+            </li>
+            <li>
+              <h6>Адрес сайта</h6>
+              <span>http://127.0.0.1:8000</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block footer %} {% include 'home/footer.html' %} {% endblock %}

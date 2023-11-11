@@ -1,0 +1,37 @@
+{% extends 'user/userbase.html' %}
+
+{% load static %}
+{% block title %} {{ item.title }} - Регистрация {% endblock %}
+{% block header %} {% include 'home/header.html' %} {% endblock %}
+
+
+{% block content %}
+<section class="register bg_common">
+    <div class="d-flex align-items-center py-4 justify-content-center">
+        <main>
+        <form method="post">
+            {% csrf_token %}
+            <h1 class="h3 mb-3 fw-normal text-white">Регистрация</h1>
+            <div class="form-floating">
+              {{ form.username }}
+              <label for="{{ form.username.id_for_label }}">Логин</label>
+            </div><div class="form-floating">
+              {{ form.email }}
+              <label for="{{ form.email.id_for_label }}">Почта</label>
+            </div>
+            <div class="form-floating">
+              {{ form.password1 }}
+              <label for="{{ form.password1.id_for_label }}">Пароль</label>
+            </div><div class="form-floating">
+              {{ form.password2 }}
+              <label for="{{ form.password2.id_for_label }}">Потвердите пароль </label>
+            </div>
+            <button class="btn btn-primary w-100 py-2 my-3" type="submit">Зарегистрироваться</button>
+        </form>
+        <h6 class="text-white">Уже есть аккаунт?<a href="{% url 'login' %}">Войти</a></h6>
+    </main>
+</section>
+
+{% endblock %}
+
+{% block footer %} {% include 'home/footer.html' %} {% endblock %}

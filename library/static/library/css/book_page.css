@@ -1,11 +1,18 @@
 .book_page{
- margin-top: 20px;
- height: 100%;
- width: 100%;
+    margin-top: 20px;
+    height: 100%;
+    width: 100%;
+    background-image: url(../images/meetings-bg.jpg);
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 140px;
+    padding-bottom: 130px;
 }
 
 .book_title{
-    color: #000;
+    color: #fff;
     line-height: 140%;
     font-size: 20pt;
     padding: 5px 0;
@@ -14,6 +21,7 @@
 }
 
 .book_description{
+    color: #fff;
     padding: 10px 0px;
     font-size: 11pt;
     height: auto;
@@ -27,9 +35,13 @@
     display: block
 }
 
+.book{
+    color: #fff;
+}
+
 .book_mosaic_text{
-    margin-top:20px;
     overflow: hidden;
+    color: #fff;
 }
 
 .book_mosaic_line{
@@ -39,7 +51,59 @@
     margin-bottom: 20px;
 }
 
-.share_button img{
-    height: 40px;
-    width: 40px;
+
+.download_button a{
+    font-size: 13px;
+    color: #fff;
+    background-color: #a12c2f;
+    padding: 12px 30px;
+    display: inline-block;
+    border-radius: 22px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all .1s;
+}
+
+.share_buttons i{
+    font-size: 2rem;
+    color: #808080;
+}
+
+/*---------------------*/
+/*STAR-RATING*/
+/*---------------------*/
+
+.form{
+}
+
+.form_margin {
+    margin: 0px, 0px, 30px, 0px;
+}
+
+.form_item {
+    margin: 0px, 0px, 30px, 0, px;
+}
+
+.form_label{
+    margin: 0px, 0px, 10px, 0, px;
+}
+
+.form_btn{
+    height: 50px;
+    background-color: #77608d;
+    padding: 0px 30px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer
+}
+
+
+.star-widget{
+    position: relative;
+    font-size: 40px;
+    display: inline-block;
+}
+
+.star-widget i{
+    color: #808080;
 }

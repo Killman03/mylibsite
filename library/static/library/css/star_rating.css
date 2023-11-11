@@ -1,9 +1,6 @@
-.star-widget{
-    position: relative;
-    font-size: 40px;
-    display: inline-block;
-}
 
+
+/*
 .star-widget::before {
  content: "★★★★★";
  display: block;
@@ -29,4 +26,5 @@
     top: 0;
     left: 0;
 }
+*/
 

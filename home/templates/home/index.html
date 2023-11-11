@@ -1,7 +1,12 @@
 {% extends 'home/homebase.html' %}
+{% load static %}
+{% load home_tags %}
+
+{% block title %} {{ item.title }} - Главная страница{% endblock %}
+{% block keywords %} {{ item.keywords }} {% endblock %}
+{% block description %} {{ item.description }} {% endblock %}
 
 {% block header %} {% include 'home/header.html' %} {% endblock %}
 {% block banner %} {% include 'home/banner.html' %} {% endblock %}
 {% block content %} {% include 'home/content.html' %} {% endblock %}
 {% block footer %} {% include 'home/footer.html' %} {% endblock %}
-

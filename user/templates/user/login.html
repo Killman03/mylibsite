@@ -1,0 +1,37 @@
+{% extends 'user/userbase.html' %}
+
+{% load static %}
+{% block title %} {{ item.title }} - Вход {% endblock %}
+{% block header %} {% include 'home/header.html' %} {% endblock %}
+
+
+{% block content %}
+<section class="login bg_common">
+    <div class="d-flex align-items-center py-4 justify-content-center">
+        <main>
+          <form method="post">
+            {% csrf_token %}
+            <h1 class="h3 mb-3 fw-normal text-white">Войти</h1>
+            {% if form.errors %}
+                <p class="text-white">
+                    Неверно введен пароль или логин. Попробуй еще.
+                </p>
+            {% endif %}
+            <div class="form-floating">
+              {{ form.username }}
+              <label for="{{ form.username.id_for_label }}">Логин</label>
+            </div>
+            <div class="form-floating">
+                {{ form.password }}
+              <label for="{{ form.password.id_for_label }}">Пароль</label>
+            </div>
+            <button class="btn btn-primary w-100 py-2 my-3" type="submit">Вход</button>
+          </form>
+          <h6 class="text-white">Нет аккаунта?<a href="{% url 'register' %}"> Зарегистрироваться</a></h6>
+        </main>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block footer %} {% include 'home/footer.html' %} {% endblock %}

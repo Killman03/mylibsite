@@ -1,27 +1,29 @@
  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky">
-      <div class="container">
-          <div class="row">
-              <div class="col-12">
-                  <nav class="main-nav">
-                      <!-- ***** Logo Start ***** -->
-                      <a href="index.html" class="logo">
-                          BUKVA
-                      </a>
-                      <!-- ***** Logo End ***** -->
-                      <!-- ***** Menu Start ***** -->
-                      <ul class="nav">
-                          {% for name in menu_name %}
-                          <li><a href="{% url name.url_name  %}">{{ name.title }}</a></li>
-                          {% endfor %}
-                      </ul>
-                      <a class='menu-trigger'>
-                          <span>Menu</span>
-                      </a>
-                      <!-- ***** Menu End ***** -->
-                  </nav>
+ <section class="upcoming-meetings" id="meetings">
+     <header class="header-area header-sticky">
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <nav class="main-nav">
+                          <!-- ***** Logo Start ***** -->
+                          <a href="index.html" class="logo">
+                              BUKVA
+                          </a>
+                          <!-- ***** Logo End ***** -->
+                          <!-- ***** Menu Start ***** -->
+                          <ul class="nav">
+                              {% for name in menu_name %}
+                              <li><a href="{% url name.url_name  %}">{{ name.title }}</a></li>
+                              {% endfor %}
+                          </ul>
+                          <a class='menu-trigger'>
+                              <span>Menu</span>
+                          </a>
+                          <!-- ***** Menu End ***** -->
+                      </nav>
+                  </div>
               </div>
           </div>
-      </div>
-  </header>
+     </header>
+ </section>
   <!-- ***** Header Area End ***** -->
