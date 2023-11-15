@@ -1,22 +1,26 @@
-from django.http import HttpResponse
-
-from .models import Books, Rating
+from django.http import HttpResponse, JsonResponse
+from django.db.models import Avg
+from .models import *
 from django.views.generic import DetailView, ListView, View
 from home.views import menu_name
-from .forms import RatingForm
+from .forms import *
+from home.utils import DataMixin
+from user.forms import LoginUserForm
 
-class LibrayHome(ListView):
+
+class LibrayHome(DataMixin, ListView):
     model = Books
     template_name = 'library/main.html'
     context_object_name = 'books'
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['menu_name'] = menu_name
-        context['title'] = 'Библиотека'
-        return context
+        context['last_books'] = Books.objects.all().order_by('id')[:16]
+        c_def = self.get_user_context()
+        return context | c_def
 
-class Book_page(DetailView):
+
+class Book_page(DataMixin, DetailView):
     model = Books
     template_name = 'library/book_page.html'
     context_object_name = 'book'
@@ -24,30 +28,41 @@ class Book_page(DetailView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['menu_name'] = menu_name
-        context['star_form'] = RatingForm
-        return context
-
-class AddStarRating(View):
-    def get_client_ip(self, request):
-        x_forwarded_for = request.Meta.get('HTTP_X_FORWARDED_FOR')
-        if x_forwarded_for:
-            ip = x_forwarded_for.split(',')[0]
-        else:
-            ip = request.META.get('REMOTE_ADDR')
-        return ip
-
-    def post(self, request):
-        form = RatingForm(request.POST)
-        if form.is_valid():
-            Rating.objects.update_or_create(
-                ip = self.get_client_ip(request),
-                book_id = int(request.POST.get("movie")),
-                defaults={'star_id': int(request.POST.get("star"))}
-            )
-            return HttpResponse(status=201)
-        else:
-            return HttpResponse(status=400)
+        context['review'] = BookReview.objects.filter(book=self.object)
+        context['average_rating'] = BookReview.objects.filter(book=self.object).aggregate(rating=Avg('rating'))
+        context['review_form'] = BookReviewForm
+        context['last_books'] = Books.objects.all().order_by('id')[:4]
+        context['form'] = LoginUserForm
+        c_def = self.get_user_context()
+        return context | c_def
 
 
+def ajax_add_review(request, pk):
+    if not request.user.is_authenticated:
+        return JsonResponse({'error': 'Вы забыли зарегестрироваться'}, status=401)
 
+    book = Books.objects.get(pk=pk)
+    user = request.user
+
+    review = BookReview.objects.create(
+        user=user,
+        book=book,
+        review=request.POST['review'],
+        rating=request.POST['rating']
+    )
+
+    context = {
+        'user': user.username,
+        'review': request.POST['review'],
+        'rating': request.POST['rating']
+    }
+
+    average_rating = BookReview.objects.filter(book=book).aggregate(rating=Avg('rating'))
+
+    return JsonResponse(
+        {
+            'bool': True,
+            'context': context,
+            'avg_reviews': average_rating
+        }
+    )

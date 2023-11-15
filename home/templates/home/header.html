@@ -14,7 +14,11 @@
                           {% for names in menu_name %}
                           <li><a href="{% url names.url_name  %}">{{ names.name }}</a></li>
                           {% endfor %}
+                          {% if request.user.is_authenticated %}
+                          <li class="last"><a href="{% url 'logout' %}"> Выйти</a></li>
+                          {% else %}
                           <li class="last"><a href="{% url 'login' %}">Войти</a></li>
+                          {% endif %}
                       </ul>
                       <a class='menu-trigger'>
                           <span>Menu</span>

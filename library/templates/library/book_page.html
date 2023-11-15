@@ -1,6 +1,5 @@
 {% extends 'library/librarybase.html' %}
 {% block navbar %} {% include 'home/header.html' %} {% endblock %}
-{% block footer %} {% include 'home/footer.html' %} {% endblock %}
 {% load static %}
 
 {% block content %}
@@ -49,13 +48,6 @@
             <button type="button" class="btn"><a href="{{ book.file.url }}">Скачать</button></a>
           </div>
           <div class="col">
-            <form action="{% url 'add_rating' %}">
-              {% csrf_token %}
-              <input type="hidden" value="{{ book.id }}" name="book">
-              <div class="rating">
-                {{ star_form }}
-              </div>
-            </form>
             <div class="star-widget">
               <i class="bi bi-star-fill"></i>
               <i class="bi bi-star-fill"></i>
@@ -63,6 +55,7 @@
               <i class="bi bi-star-fill"></i>
               <i class="bi bi-star-fill"></i>
             </div>
+          <h6>{{ average_rating.rating|floatformat:1 }}</h6>
           </div>
           <div class="col">
             <div class="share_buttons">
@@ -89,9 +82,12 @@
             <span style="float:left">Комментарии</span>
           </h2>
           <div class="book_mosaic_line"></div>
+          {% block comment %} {% include 'library/comment.html' %} {% endblock %}
         </div>
       </div>
   </div>
 </div>
 
 {% endblock %}
+
+{% block footer %} {% include 'home/footer.html' %} {% endblock %}

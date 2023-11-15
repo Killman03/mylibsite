@@ -1,6 +1,14 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
+RATING = (
+    (1, "⭐☆☆☆☆"),
+    (2, "⭐⭐☆☆☆"),
+    (3, "⭐⭐⭐☆☆"),
+    (4, "⭐⭐⭐⭐☆"),
+    (5, "⭐⭐⭐⭐⭐"),
+)
 
 class Author(models.Model):
     name = models.CharField("Имя", max_length=30, blank=False, null=False)
@@ -42,28 +50,23 @@ class Books(models.Model):
         verbose_name_plural = 'Книги'
 
 
-class RatingStar(models.Model):
-    value = models.SmallIntegerField('Количество', default=0)
-
-    def __str__(self):
-        return f'{self.value}'
-
-    class Meta:
-        verbose_name = 'Звезда рейтинга'
-        verbose_name_plural = 'Звезды рейтинга'
-        ordering = ["-value"]
-
-
-class Rating(models.Model):
-    ip = models.CharField('IP адрес', max_length=15)
-    star = models.ForeignKey(RatingStar, on_delete=models.CASCADE, verbose_name='Звезда')
-    book = models.ForeignKey(Books, on_delete=models.CASCADE, verbose_name='Книга')
-
-    def __str__(self):
-        return self.value
+class BookReview(models.Model):
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    book = models.ForeignKey(Books, on_delete=models.SET_NULL, null=True, related_name='book_reviews')
+    review = models.TextField()
+    rating = models.IntegerField(choices=RATING, default=None)
+    create_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        verbose_name = 'Рейтинг'
-        verbose_name_plural = 'Рейтинги'
+        verbose_name = 'Отзыв'
+        verbose_name_plural = 'Отзывы'
+        ordering = ['-create_at']
+        indexes = [
+            models.Index(fields=['create_at']),
+        ]
 
+    def __str__(self):
+        return self.book.title
 
+    def get_rating(self):
+        return self.rating

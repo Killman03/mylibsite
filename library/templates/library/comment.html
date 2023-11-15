@@ -1,0 +1,43 @@
+<div class="comment-area">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="comment-list" id="reviews">
+                {% for r in review %}
+                    <div class="card my-3" style="width: 90%;">
+                        <div class="card-body">
+                            <div class="thumb d-flex justify-content-between">
+                                <p class="pe-3">{{ r.user }}</p>
+                                <span>{{ r.create_at|date:"d M, Y" }}</span>
+                                <div class="product_rating">
+                                    {% for s in r.rating|ljust:r.rating %}
+                                    <i class="bi bi-star-fill" style="color: gold;"></i>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="desc">
+                                <p class="card-text">{{ r.review }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-lg-4">
+            {% if request.user.is_authenticated %}
+                <h4 class="mb-3">Оставь свой отзыв</h4>
+                <form method="post" action="{% url 'ajax_add_review' book.id %}" id="comment_form">
+                    {% csrf_token %}
+                    {% for f in review_form %}
+                    <div class="comment_form">
+                    {{ f }}
+                    </div>
+                    <div class="form-error text-white"> {{ f.errors }}</div>
+                    {% endfor %}
+                    <button class="btn btn-primary w-100 py-2 my-3" type="submit">Отправить</button>
+                </form>
+            {% else %}
+                {% block content %} {% include 'user/login_form.html' %} {% endblock %}
+            {% endif %}
+        </div>
+    </div>
+</div>

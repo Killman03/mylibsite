@@ -1,0 +1,20 @@
+<main class="align-items-center justify-content-center">
+  <form method="post">
+    {% csrf_token %}
+    <h1 class="h3 mb-3 fw-normal text-white">Войти</h1>
+    {% if form.errors %}
+        <p class="text-white">
+            Неверно введен пароль или логин. Попробуй еще.
+        </p>
+    {% endif %}
+    {% for f in form %}
+    <div class="form-floating pb-2">
+      {{ f }}
+      <label for="{{ f.id_for_label }}">{{ f.label }}</label>
+    </div>
+     <div class="form-errors text-white">{{ f.errors }}</div>
+    {% endfor %}
+     <button class="btn btn-primary w-100 py-2 my-3" type="submit">Вход</button>
+  </form>
+  <h6 class="text-white">Нет аккаунта?<a href="{% url 'register' %}"> Зарегистрироваться</a></h6>
+</main>

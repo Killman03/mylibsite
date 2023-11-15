@@ -1,6 +1,7 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.views import LoginView
 from django.http import HttpResponse
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from home.utils import DataMixin
 from django.views.generic import CreateView
@@ -24,6 +25,7 @@ class RegisterUser(DataMixin, CreateView):
         login(self.request, user)
         return result
 
+
 class LoginUser(DataMixin, LoginView):
     form_class = LoginUserForm
     template_name = 'user/login.html'
@@ -33,5 +35,9 @@ class LoginUser(DataMixin, LoginView):
         c_def = self.get_user_context()
         return context | c_def
 
+
+def logout_user(request):
+    logout(request)
+    return redirect('login')
 
 # Create your views here.
