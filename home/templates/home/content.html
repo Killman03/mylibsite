@@ -22,7 +22,7 @@
     </div>
   </section>
 <!--Конец новостной корусели-->
-<!--Mini library -->
+<!--Block mini library -->
   <section class="upcoming-meetings" id="meetings">
     <div class="container">
       <div class="row">
@@ -34,33 +34,38 @@
         <div class="col-lg-4">
           <div class="categories">
             <h4>Книги по популярности</h4>
-            {% for book in popular_books %}
+            {% for b in book %}
             <ul>
-              <li><a href="#">{{ book.title }}</a></li>
+              <li><a href="#">{{ b.title }}</a></li>
             </ul>
             {% endfor %}
             <div class="main-button-red">
-              <a href="meetings.html">Вся библиотека</a>
+              <a href="{% url 'library_home' %}">Вся библиотека</a>
             </div>
           </div>
         </div>
-        <div class="col-lg-4">
-          <p>1243</p>
-        </div>
-        <div class="col-lg-8">
+        <div class="col">
           <div class="row">
+            {% for b in book %}
+              <div class="col-lg-3 col-md-3 col-sm-6">
+                <div class="card">
+                  <a href="{{ b.get_absolute_url }}"><img src="{{ b.image.url }}" class="card-img-top" alt="Название книги 1"></a>
+                </div>
+              </div>
+            {% endfor %}
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="our-courses" id="courses">
+<!--Block Sunday's school-->
+<!--  <section class="our-courses" id="courses">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
           <div class="section-heading">
-            <h2>Our Popular Courses</h2>
+            <h2>Воскресная школа</h2>
           </div>
         </div>
         <div class="col-lg-12">
@@ -330,28 +335,29 @@
         </div>
       </div>
     </div>
-  </section>
-
+  </section>-->
+<!--Endblock Sunday's school-->
+<!--Block facts-->
   <section class="our-facts">
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
           <div class="row">
             <div class="col-lg-12">
-              <h2>A Few Facts About Our University</h2>
+              <h2>Несколько фактов о нашем сайте</h2>
             </div>
             <div class="col-lg-6">
               <div class="row">
                 <div class="col-12">
                   <div class="count-area-content percentage">
-                    <div class="count-digit">94</div>
-                    <div class="count-title">Succesed Students</div>
+                    <div class="count-digit">{{ request.session.visits }}</div>
+                    <div class="count-title">Пользователей посетили наш сайт</div>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="count-area-content">
-                    <div class="count-digit">126</div>
-                    <div class="count-title">Current Teachers</div>
+                    <div class="count-digit">12345</div>
+                    <div class="count-title">Книги загруженно на наш сайт</div>
                   </div>
                 </div>
               </div>
@@ -360,14 +366,14 @@
               <div class="row">
                 <div class="col-12">
                   <div class="count-area-content new-students">
-                    <div class="count-digit">2345</div>
-                    <div class="count-title">New Students</div>
+                    <div class="count-digit">45</div>
+                    <div class="count-title">Часов проведенных на нашем сайте</div>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="count-area-content">
                     <div class="count-digit">32</div>
-                    <div class="count-title">Awards</div>
+                    <div class="count-title">Количество зарегестрированных пользователей</div>
                   </div>
                 </div>
               </div>
@@ -376,13 +382,13 @@
         </div>
         <div class="col-lg-6 align-self-center">
           <div class="video">
-            <a href="https://www.youtube.com/watch?v=HndV87XpkWg" target="_blank"><img src="{% static 'images/play-icon.png' %}" alt=""></a>
+            <img src="{% static 'images/book_reading.jpg' %}" alt="">
           </div>
         </div>
       </div>
     </div>
   </section>
-
+<!--Endblock facts-->
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
     <script src="{% static 'home/jquery/jquery.min.js' %}"></script>

@@ -107,3 +107,8 @@
 .star-widget i{
     color: #808080;
 }
+
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label{
+    color: #fd4;
+}

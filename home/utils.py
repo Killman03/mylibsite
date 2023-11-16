@@ -8,10 +8,9 @@ menu_name = [
              ]
 
 class DataMixin:
-    def get_mixin_context(self, context, **kwargs):
+    def get_user_context(self, **kwargs):
         context = kwargs
         setting = Setting.objects.get(pk=1)
         context['item'] = setting
         context['menu_name'] = menu_name
-        context.update(kwargs)
         return context

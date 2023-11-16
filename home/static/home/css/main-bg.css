@@ -466,10 +466,6 @@ section.our-facts h2 {
   margin: 15px 0px;
 }
 
-.percentage .count-digit:after {
-  content: '%';
-  margin-left: 3px;
-}
 
 .count-digit {
     margin: 5px 0px;

@@ -14,7 +14,7 @@ class Home(DataMixin, ListView):
         context = super().get_context_data(**kwargs)
         c_def = self.get_user_context()
         context['meetings_slider'] = Events.objects.all().order_by('start_time')[:5]
-        context['popular_books'] = Books.objects.all().order_by('id')[:5]
+        context['book'] = Books.objects.all().order_by('-id')[:8]
         return context | c_def
 
     def get_queryset(self):

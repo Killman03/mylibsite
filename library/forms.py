@@ -8,3 +8,6 @@ class BookReviewForm(forms.ModelForm):
     class Meta:
         model = BookReview
         fields = ['review', 'rating']
+
+class SearchForm(forms.Form):
+    query = forms.CharField()
