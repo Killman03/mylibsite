@@ -8,7 +8,7 @@ urlpatterns = [
     path("", LibrayHome.as_view(), name='library_home'),
     path("<slug:book_slug>/", Book_page.as_view(), name='book_page'),
     path("ajax-add-review/<int:pk>", ajax_add_review, name='ajax_add_review'),
-    path("search/", search_books, name='search'),
+    path("search", search_view, name='search'),
 ]
 
 if settings.DEBUG:

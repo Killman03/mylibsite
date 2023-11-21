@@ -1,0 +1,52 @@
+{% for i in all %}
+<div class="col-lg-4 templatemo-item-col all total">
+  <div class="meeting-item">
+    <div class="down-content">
+      <div class="date col-lg-1">
+        <h6>{{ i.date|date:"b" }} <span>{{ i.date|date:"j" }}</span></h6>
+      </div>
+      <a class="col-lg-3" href="{{ i.get_absolute_url }}"><h4>{{ i.title }}</h4></a>
+      <p>{{ i.details }}</p>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% for i in soon %}
+<div class="col-lg-4 templatemo-item-col all soon">
+  <div class="meeting-item">
+    <div class="down-content">
+      <div class="date col-lg-1">
+        <h6>{{ i.date|date:"b" }} <span>{{ i.date|date:"j" }}</span></h6>
+      </div>
+      <a class="col-lg-3" href="{{ i.get_absolute_url }}"><h4>{{ i.title }}</h4></a>
+      <p>{{ i.details }}</p>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% for i in imp %}
+<div class="col-lg-4 templatemo-item-col all imp">
+  <div class="meeting-item">
+    <div class="down-content">
+      <div class="date col-lg-1">
+        <h6>{{ i.date|date:"b" }} <span>{{ i.date|date:"j" }}</span></h6>
+      </div>
+      <a class="col-lg-3" href="{{ i.get_absolute_url }}"><h4>{{ i.title }}</h4></a>
+      <p>{{ i.details }}</p>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% for i in attr %}
+<div class="col-lg-4 templatemo-item-col all att">
+  <div class="meeting-item">
+    <div class="down-content">
+      <div class="date col-lg-1">
+        <h6>{{ i.date|date:"b" }} <span>{{ i.date|date:"j" }}</span></h6>
+      </div>
+      <a class="col-lg-3" href="{{ i.get_absolute_url }}"><h4>{{ i.title }}</h4></a>
+      <p>{{ i.details }}</p>
+    </div>
+  </div>
+</div>
+{% endfor %}

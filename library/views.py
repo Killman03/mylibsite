@@ -1,11 +1,13 @@
 from django.contrib.postgres.search import SearchVector
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseRedirect
 from django.db.models import Avg
 from .models import Books
 from django.views.generic import DetailView, ListView
 from .forms import *
 from home.utils import DataMixin
 from user.forms import LoginUserForm
+from django.shortcuts import render, redirect
+from django.contrib import messages
 
 
 class LibrayHome(DataMixin, ListView):
@@ -15,8 +17,10 @@ class LibrayHome(DataMixin, ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         context['book'] = Books.objects.all().order_by('-id')[:16]
+        context['form'] = SearchForm
         c_def = self.get_user_context()
         return context | c_def
+
 
 class Book_page(DataMixin, DetailView):
     model = Books
@@ -29,7 +33,7 @@ class Book_page(DataMixin, DetailView):
         context['review'] = BookReview.objects.filter(book=self.object)
         context['average_rating'] = BookReview.objects.filter(book=self.object).aggregate(rating=Avg('rating'))
         context['review_form'] = BookReviewForm
-        context['last_books'] = Books.objects.all().order_by('id')[:4]
+        context['recommended_books'] = Books.objects.all().order_by('id')[:6]
         context['form'] = LoginUserForm
         c_def = self.get_user_context()
         return context | c_def
@@ -65,21 +69,21 @@ def ajax_add_review(request, pk):
         }
     )
 
-def search_books(request):
-    form = SearchForm
-    query = None
-    results = []
 
-    if 'query' in request.GET:
-        form = SearchForm(request.GET)
-        if form.is_valid():
-            query = form.cleaned_data['query']
-            results = Books.objects.annotate(
-                search=SearchVector('title', 'description')
-            ).filter(search=query)
+def search_view(request):
+    if request.method == 'POST':
+        searchedterm = request.POST.get('booksearch')
 
-        return render(request,
-                      'library/search.html',
-                      {'form': form,
-                       'query': query,
-                       'results': results})
+        if searchedterm == '':
+            return redirect(request.META.get('HTTP_REFERER'))
+        else:
+            results = Books.objects.annotate(search=SearchVector('title', 'description')).filter(search=searchedterm)
+
+            if results:
+                context = {'results': results}
+                return render(request, 'library/search_book.html', context=context)
+            else:
+                messages.info(request, 'NO BOOKS')
+                return redirect(request.META.get('HTTP_REFERER'))
+
+    return redirect(request.META.get('HTTP_REFERER'))

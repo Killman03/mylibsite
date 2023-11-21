@@ -67,6 +67,7 @@
 .share_buttons i{
     font-size: 2rem;
     color: #808080;
+    padding-left: 0.5rem;
 }
 
 /*---------------------*/
@@ -97,18 +98,6 @@
     cursor: pointer
 }
 
-
-.star-widget{
-    position: relative;
-    font-size: 40px;
-    display: inline-block;
-}
-
-.star-widget i{
-    color: #808080;
-}
-
-input:not(:checked) ~ label:hover,
-input:not(:checked) ~ label:hover ~ label{
-    color: #fd4;
+.avg_rating {
+    font-size: 25px;
 }

@@ -63,7 +63,6 @@ class Events(models.Model):
     title = models.CharField("Название", max_length=50)
     slug = models.SlugField(max_length=50, unique=True, db_index=True, verbose_name='URL')
     details = models.CharField("Детали", max_length=150)
-    image = models.ImageField("Картинка", upload_to='images/%Y/%m/%d/')
     location = models.CharField("Место проведения", blank=True, max_length=50)
     for_who = models.CharField('Для кого?', blank=True, max_length=50)
     descriptions = RichTextUploadingField("Описание", blank=True)

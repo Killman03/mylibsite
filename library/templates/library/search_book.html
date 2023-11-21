@@ -1,4 +1,8 @@
+{% extends 'library/librarybase.html' %}
+{% block navbar %} {% include 'home/header.html' %} {% endblock %}
 {% load static %}
+
+{% block content %}
 <div class="library_main">
     <div class="container">
         <div class="main_phrase mb-5">
@@ -18,12 +22,12 @@
 
         <div>
             <h2 class="book_mosaic_text_main">
-                <span style="float:left">Вам может понравиться</span>
+                <span style="float:left">Результаты поиска</span>
             </h2>
             <div class="book_mosaic_line"></div>
         </div>
           <div class="row">
-                {% for b in book %}
+                {% for b in results %}
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                   <div class="card">
                 <a href="{{ b.get_absolute_url }}"><img src="{{ b.image.url }}" class="card-img-top" alt="Название книги 1"></a>
@@ -33,3 +37,5 @@
           </div>
     </div>
 </div>
+
+{% endblock %}

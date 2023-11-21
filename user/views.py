@@ -11,6 +11,7 @@ from .forms import RegisterUserForm, LoginUserForm
 class RegisterUser(DataMixin, CreateView):
     form_class = RegisterUserForm
     template_name = 'user/register.html'
+    success_url = reverse_lazy('home')
 
     def get_context_data(self, *, object_list=False, **kwargs):
         context = super().get_context_data(**kwargs)

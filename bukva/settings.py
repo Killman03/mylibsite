@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "library.apps.LibraryConfig",
     "user.apps.UserConfig",
     "ckeditor",
+    'debug_toolbar'
 ]
 
 MIDDLEWARE = [
@@ -54,6 +55,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     'home.middleware.CountVisitsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = "bukva.urls"
@@ -149,4 +151,15 @@ CKEDITOR_CONFIGS = {
 
 ###################################
 
-LOGIN_REDIRECT_URL = '/'
+INTERNAL_IPS = [
+    # ...
+    "127.0.0.1",
+    # ...
+]
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.memcached.PyMemcacheCache",
+        "LOCATION": '127.0.0.1:11211',
+    }
+}

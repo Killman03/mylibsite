@@ -48,14 +48,7 @@
             <button type="button" class="btn"><a href="{{ book.file.url }}">Скачать</button></a>
           </div>
           <div class="col">
-            <div class="star-widget">
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-            </div>
-          <h6>{{ average_rating.rating|floatformat:1 }}</h6>
+            <h6 class="avg_rating mt-3">{{ average_rating.rating|floatformat:1 }}/5,0</h6>
           </div>
           <div class="col">
             <div class="share_buttons">
@@ -76,6 +69,16 @@
             <span style="float:left">Вам может понравиться</span>
           </h2>
           <div class="book_mosaic_line"></div>
+          <div class="row">
+            {% for b in recommended_books %}
+              <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+                <div class="card">
+              <a href="{{ b.get_absolute_url }}"><img src="{{ b.image.url }}" class="card-img-top" alt="Название книги 1"></a>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+
         </div>
         <div>
           <h2 class="book_mosaic_text">
@@ -86,7 +89,6 @@
         </div>
       </div>
   </div>
-</div>
 
 {% endblock %}
 

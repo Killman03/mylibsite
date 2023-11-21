@@ -1,4 +1,3 @@
-"use strict"
 
 const ratings = document.querySelector.ALL('.rating');
 
