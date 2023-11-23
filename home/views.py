@@ -62,5 +62,20 @@ class MeetingDetailView(DataMixin, DetailView):
         c_def = self.get_user_context()
         return context | c_def
 
+def about_us(request):
+    context = {
+        'item': Setting.objects.get(pk=1),
+        'menu_name': menu_name,
+    }
+    return render(request, 'home/about_us.html', context=context)
+
+def support_project(request):
+    context = {
+        'item': Setting.objects.get(pk=1),
+        'menu_name': menu_name,
+    }
+    return render(request, 'home/support_project.html', context=context)
+
+
 
 # Create your views here.

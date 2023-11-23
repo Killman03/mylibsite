@@ -14,17 +14,17 @@
         <div class="col-12 col-md">
           <p>Поддержка</p>
           <ul class="list-unstyled text-small">
-            <li><a href="#" class="link-secondary">Вопрос</a></li>
-            <li><a href="#" class="link-secondary">Вопрос</a></li>
-            <li><a href="#" class="link-secondary">Вопрос</a></li>
+            <li><a href="{% url 'about_us' %}" class="link-secondary">О нас</a></li>
+            <li><a href="{% url 'contacts' %}" class="link-secondary">Оставить пожелание</a></li>
+            <li><a href="{% url 'support_us' %}" class="link-secondary">Поддержать проект</a></li>
           </ul>
         </div>
         <div class="col-12 col-md">
           <p>Приложения</p>
           <ul class="list-unstyled text-small">
-            <li><a href="#" class="link-secondary">Главная</a></li>
-            <li><a href="#" class="link-secondary">Встречи</a></li>
-            <li><a href="#" class="link-secondary">Библиотека</a></li>
+            <li><a href="{% url 'library_home' %}" class="link-secondary">Библиотека</a></li>
+            <li><a href="{% url 'home' %}" class="link-secondary">Главная</a></li>
+            <li><a href="{% url 'meetings' %}" class="link-secondary">Встречи</a></li>
           </ul>
         </div>
       </div>
