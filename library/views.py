@@ -1,6 +1,6 @@
 from django.contrib.postgres.search import SearchVector
 from django.http import JsonResponse, HttpResponseRedirect
-from django.db.models import Avg
+from django.db.models import Avg, Q
 from .models import Books
 from django.views.generic import DetailView, ListView
 from .forms import *
@@ -77,7 +77,8 @@ def search_view(request):
         if searchedterm == '':
             return redirect(request.META.get('HTTP_REFERER'))
         else:
-            results = Books.objects.annotate(search=SearchVector('title', 'description')).filter(search=searchedterm)
+            results = Books.objects.filter(Q(title__iregex=searchedterm) | Q(description__iregex=searchedterm) | Q(
+                author__name__iregex=searchedterm))
 
             if results:
                 context = {'results': results}

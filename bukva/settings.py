@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-rf&t25fd)7rt!bt^0me80$hqhzsc9^h1)r65zvmq$4-2q^*(3!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "django.contrib.postgres",
     "home.apps.HomeConfig",
     "library.apps.LibraryConfig",
     "user.apps.UserConfig",
@@ -84,12 +83,12 @@ WSGI_APPLICATION = "bukva.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "library",
-        "USER": "postgres",
-        "PASSWORD": "1234567890",
-        "HOST": 'localhost',
-        'PORT': '5432',
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+        # "USER": "postgres",
+        # "PASSWORD": "1234567890",
+        # "HOST": 'localhost',
+        #'PORT': '5432',
     }
 }
 
