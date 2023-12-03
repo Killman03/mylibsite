@@ -1,0 +1,1131 @@
+
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2023-11-16T14:47:26.106Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "Джон",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2023-11-16T14:48:21.645Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "Густав",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2023-11-16T14:53:41.545Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "1",
+    "object_repr": "Властелин колец",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2023-11-16T14:56:53.506Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "2",
+    "object_repr": "Девяносто третий год",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2023-11-16T14:59:06.195Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "3",
+    "object_repr": "Отверженные",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2023-11-16T15:02:14.331Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "Bukva",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2023-11-16T15:02:51.663Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "Bukva",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"About us\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2023-11-16T15:03:23.650Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "Bukva",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"About us\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2023-11-18T04:51:21.350Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "3",
+    "object_repr": "dima",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2023-11-18T05:06:57.139Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "Подростковое",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2023-11-18T05:15:41.920Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "2",
+    "object_repr": "Воскресное Богослужение",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2023-11-18T05:23:04.532Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "3",
+    "object_repr": "Молитвенное собрание",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2023-11-18T05:26:28.672Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "4",
+    "object_repr": "Братское общение",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2023-11-18T05:32:24.257Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "5",
+    "object_repr": "Рождество Христово",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add Настройка",
+    "content_type": 7,
+    "codename": "add_setting"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change Настройка",
+    "content_type": 7,
+    "codename": "change_setting"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete Настройка",
+    "content_type": 7,
+    "codename": "delete_setting"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view Настройка",
+    "content_type": 7,
+    "codename": "view_setting"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add Контакт",
+    "content_type": 8,
+    "codename": "add_contactmessage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change Контакт",
+    "content_type": 8,
+    "codename": "change_contactmessage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete Контакт",
+    "content_type": 8,
+    "codename": "delete_contactmessage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view Контакт",
+    "content_type": 8,
+    "codename": "view_contactmessage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add Встреча",
+    "content_type": 9,
+    "codename": "add_events"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change Встреча",
+    "content_type": 9,
+    "codename": "change_events"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete Встреча",
+    "content_type": 9,
+    "codename": "delete_events"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view Встреча",
+    "content_type": 9,
+    "codename": "view_events"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add Автор",
+    "content_type": 10,
+    "codename": "add_author"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change Автор",
+    "content_type": 10,
+    "codename": "change_author"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete Автор",
+    "content_type": 10,
+    "codename": "delete_author"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view Автор",
+    "content_type": 10,
+    "codename": "view_author"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add Книга",
+    "content_type": 11,
+    "codename": "add_books"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change Книга",
+    "content_type": 11,
+    "codename": "change_books"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete Книга",
+    "content_type": 11,
+    "codename": "delete_books"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view Книга",
+    "content_type": 11,
+    "codename": "view_books"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add Отзыв",
+    "content_type": 12,
+    "codename": "add_bookreview"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change Отзыв",
+    "content_type": 12,
+    "codename": "change_bookreview"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete Отзыв",
+    "content_type": 12,
+    "codename": "delete_bookreview"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view Отзыв",
+    "content_type": 12,
+    "codename": "view_bookreview"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add rating",
+    "content_type": 13,
+    "codename": "add_rating"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change rating",
+    "content_type": 13,
+    "codename": "change_rating"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete rating",
+    "content_type": 13,
+    "codename": "delete_rating"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view rating",
+    "content_type": 13,
+    "codename": "view_rating"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can add user rating",
+    "content_type": 14,
+    "codename": "add_userrating"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can change user rating",
+    "content_type": 14,
+    "codename": "change_userrating"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 55,
+  "fields": {
+    "name": "Can delete user rating",
+    "content_type": 14,
+    "codename": "delete_userrating"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 56,
+  "fields": {
+    "name": "Can view user rating",
+    "content_type": 14,
+    "codename": "view_userrating"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$3LsAFWZsMOqrymAqnD8yWR$IouXuZBglnUccUjHQYp5g3sQbC7dMLPh5CcYAkCvqRo=",
+    "last_login": "2023-11-18T11:48:36.036Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "tg3381234@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-11-16T14:36:04.551Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$zzOITONFRAtgMl5kCAyRcC$KNu1gNaj8PmI93EDY8aRrAE2exS+Jcih8pgee/Pgw4s=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "karl",
+    "first_name": "",
+    "last_name": "",
+    "email": "tg338123456@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-18T04:43:14.580Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$N95HoAkjlVhz9m2hgEXTwg$11/Wlkz+CRKeJaSCtoSHrTurhkqkDbQJcHCnboEiGnI=",
+    "last_login": "2023-11-18T04:51:49.674Z",
+    "is_superuser": false,
+    "username": "dima",
+    "first_name": "",
+    "last_name": "",
+    "email": "michael.mak.9999999999@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-11-18T04:50:03Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "home",
+    "model": "setting"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "home",
+    "model": "contactmessage"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "home",
+    "model": "events"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "library",
+    "model": "author"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "library",
+    "model": "books"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "library",
+    "model": "bookreview"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 13,
+  "fields": {
+    "app_label": "star_ratings",
+    "model": "rating"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 14,
+  "fields": {
+    "app_label": "star_ratings",
+    "model": "userrating"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "30vbf71rz6aihcmq1emjojz22ey7wkwd",
+  "fields": {
+    "session_data": "eyJ2aXNpdHMiOjF9:1r3xCs:rMmqbbVNsE0MLEXRA9nMskisQq3-YJWBgv5BoZQS5m0",
+    "expire_date": "2023-12-01T11:40:18.099Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "5rtonhkpx0uim671gzich4s17xoy4u55",
+  "fields": {
+    "session_data": "eyJ2aXNpdHMiOjF9:1r6b4D:b2nKlm3WYmk0icLEAahYpNWG6NECEGicxBYeKfCKiMs",
+    "expire_date": "2023-12-08T18:38:17.328Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "gs56ka2hmf7l8f292jzqy7rpuyy6iz94",
+  "fields": {
+    "session_data": "eyJ2aXNpdHMiOjJ9:1r7pqb:fHoletNMnMsZoijrBWbwSWRhG3tVDqj6zU8Ge8TrsQw",
+    "expire_date": "2023-12-12T04:37:21.347Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ixwc3ss5lt7miy9xyuoullyd7id2i9fg",
+  "fields": {
+    "session_data": "eyJ2aXNpdHMiOjF9:1r3xCr:0pY9YkYbcvIIelDW9e1s2QycCPGHaWwz63F7Sxu2g8w",
+    "expire_date": "2023-12-01T11:40:17.980Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "jm4lc2bklaapz6h23wl7ijvghmbikh8o",
+  "fields": {
+    "session_data": "eyJ2aXNpdHMiOjF9:1r4PUl:MHGk5zo2FMj8s3yjQvVwCyDm4Hrf1_aWNSClhWLoG_M",
+    "expire_date": "2023-12-02T17:52:39.501Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ok9vkcx68lha9lhu2v1dqf6cz1fklysc",
+  "fields": {
+    "session_data": "eyJ2aXNpdHMiOjF9:1r5rs9:kdBgz-6tXcdMG_LZmCLLYwRhLL44ofL76qgoqk5CGtc",
+    "expire_date": "2023-12-06T18:22:49.839Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "qcfkzvjyov9kj2o2f6c5p75xe6itzrat",
+  "fields": {
+    "session_data": "eyJ2aXNpdHMiOjF9:1r3xCs:rMmqbbVNsE0MLEXRA9nMskisQq3-YJWBgv5BoZQS5m0",
+    "expire_date": "2023-12-01T11:40:18.035Z"
+  }
+},
+{
+  "model": "home.setting",
+  "pk": 1,
+  "fields": {
+    "title": "Bukva",
+    "keywords": "Library, Books, Novels",
+    "description": "Сайт для тех, кто хочет развиваться и открывать для себя каждый день новое.",
+    "icon": "images/Bukva_icon.png",
+    "facebook": "",
+    "whatsapp": "",
+    "telegram": "",
+    "email": "",
+    "instagram": "",
+    "about_us": "<p><em><span style=\"font-size:16px\">Сайт для тех, кто хочет развиваться и открывать для себя каждый день новое.</span></em></p>",
+    "contacts": "",
+    "status": "True",
+    "create_at": "2023-11-16T15:02:14.326Z",
+    "update_at": "2023-11-16T15:03:23.648Z"
+  }
+},
+{
+  "model": "home.events",
+  "pk": 1,
+  "fields": {
+    "title": "Подростковое",
+    "slug": "podrostkovoe",
+    "details": "Приводите подростков для общения с Богом",
+    "location": "Дом Михайловых",
+    "for_who": "Подростки 12-16 лет",
+    "descriptions": "<p>Следует отметить, что постоянное информационно-пропагандистское обеспечение нашей деятельности играет важную роль в формировании системы массового участия. Противоположная точка зрения подразумевает, что сделанные на базе интернет-аналитики выводы представлены в исключительно положительном свете. В рамках спецификации современных стандартов, элементы политического процесса, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок.</p>",
+    "date": "2023-11-22",
+    "start_time": "19:00:00",
+    "end_time": "21:00:00",
+    "is_important": false,
+    "is_attractive": true,
+    "status": "True",
+    "create_at": "2023-11-18T05:06:57.134Z",
+    "update_at": "2023-11-18T05:06:57.134Z"
+  }
+},
+{
+  "model": "home.events",
+  "pk": 2,
+  "fields": {
+    "title": "Воскресное Богослужение",
+    "slug": "voskresnoe-bogosluzhenie",
+    "details": "Для всех, кто хочет провести воскресенье в молитве",
+    "location": "Дом молитвы",
+    "for_who": "Для всех желающих",
+    "descriptions": "<p>В рамках спецификации современных стандартов, акционеры крупнейших компаний представляют собой не что иное, как квинтэссенцию победы маркетинга над разумом и должны быть объединены в целые кластеры себе подобных. Ясность нашей позиции очевидна: постоянное информационно-пропагандистское обеспечение нашей деятельности не оставляет шанса для благоприятных перспектив. Прежде всего, дальнейшее развитие различных форм деятельности предопределяет высокую востребованность приоретизации разума над эмоциями. Идейные соображения высшего порядка, а также укрепление и развитие внутренней структуры однозначно фиксирует необходимость стандартных подходов.</p>",
+    "date": "2023-11-19",
+    "start_time": "10:00:00",
+    "end_time": "12:00:00",
+    "is_important": true,
+    "is_attractive": false,
+    "status": "True",
+    "create_at": "2023-11-18T05:15:41.918Z",
+    "update_at": "2023-11-18T05:15:41.918Z"
+  }
+},
+{
+  "model": "home.events",
+  "pk": 3,
+  "fields": {
+    "title": "Молитвенное собрание",
+    "slug": "molitvennoe-sobranie",
+    "details": "Имеется спорная точка зрения, гласящая примерно следующее: предприниматели в сети интернет будут указаны как претенденты на роль ключевых факторов.",
+    "location": "Дом молитвы",
+    "for_who": "Для всех братьев и систер",
+    "descriptions": "<p>Современные технологии достигли такого уровня, что экономическая повестка сегодняшнего дня обеспечивает широкому кругу (специалистов) участие в формировании первоочередных требований. Как уже неоднократно упомянуто, явные признаки победы институционализации смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Как уже неоднократно упомянуто, независимые государства призывают нас к новым свершениям, которые, в свою очередь, должны быть обнародованы. Прежде всего, курс на социально-ориентированный национальный проект влечет за собой процесс внедрения и модернизации дальнейших направлений развития.</p>",
+    "date": "2023-11-23",
+    "start_time": "18:00:00",
+    "end_time": "20:00:00",
+    "is_important": true,
+    "is_attractive": true,
+    "status": "True",
+    "create_at": "2023-11-18T05:23:04.518Z",
+    "update_at": "2023-11-18T05:23:04.518Z"
+  }
+},
+{
+  "model": "home.events",
+  "pk": 4,
+  "fields": {
+    "title": "Братское общение",
+    "slug": "bratskoe-obshenie",
+    "details": "Общение, где братья размышляют над Словом Божием",
+    "location": "Дом молитвы",
+    "for_who": "Для всех братьев",
+    "descriptions": "<p>Современные технологии достигли такого уровня, что экономическая повестка сегодняшнего дня напрямую зависит от соответствующих условий активизации! Но перспективное планирование предоставляет широкие возможности для глубокомысленных рассуждений. С учётом сложившейся международной обстановки, существующая теория играет определяющее значение для благоприятных перспектив. Идейные соображения высшего порядка, а также социально-экономическое развитие требует анализа системы обучения кадров, соответствующей насущным потребностям. В рамках спецификации современных стандартов, многие известные личности представляют собой не что иное, как квинтэссенцию победы маркетинга над разумом и должны быть преданы социально-демократической анафеме.</p>",
+    "date": "2023-11-21",
+    "start_time": "18:00:00",
+    "end_time": "20:00:00",
+    "is_important": false,
+    "is_attractive": true,
+    "status": "True",
+    "create_at": "2023-11-18T05:26:28.669Z",
+    "update_at": "2023-11-18T05:26:28.669Z"
+  }
+},
+{
+  "model": "home.events",
+  "pk": 5,
+  "fields": {
+    "title": "Рождество Христово",
+    "slug": "rozhdestvo-hristovo",
+    "details": "Следует отметить, что семантический разбор внешних противодействий",
+    "location": "Дом молитвы",
+    "for_who": "Для всех",
+    "descriptions": "<p>Следует отметить, что семантический разбор внешних противодействий, а также свежий взгляд на привычные вещи &mdash; безусловно открывает новые горизонты для направлений прогрессивного развития. Разнообразный и богатый опыт говорит нам, что дальнейшее развитие различных форм деятельности является качественно новой ступенью дальнейших направлений развития. Безусловно, внедрение современных методик однозначно фиксирует необходимость как самодостаточных, так и внешне зависимых концептуальных решений.</p>",
+    "date": "2023-12-25",
+    "start_time": "18:00:00",
+    "end_time": "20:00:00",
+    "is_important": true,
+    "is_attractive": true,
+    "status": "True",
+    "create_at": "2023-11-18T05:32:24.254Z",
+    "update_at": "2023-11-18T05:32:24.255Z"
+  }
+},
+{
+  "model": "library.author",
+  "pk": 1,
+  "fields": {
+    "name": "Джон",
+    "middle_name": "Рональд Руэл",
+    "second_name": "Толкин",
+    "create_at": "2023-11-16T14:47:26.101Z",
+    "update_at": "2023-11-16T14:47:26.101Z"
+  }
+},
+{
+  "model": "library.author",
+  "pk": 2,
+  "fields": {
+    "name": "Густав",
+    "middle_name": "фон",
+    "second_name": "Гуго",
+    "create_at": "2023-11-16T14:48:21.642Z",
+    "update_at": "2023-11-16T14:48:21.642Z"
+  }
+},
+{
+  "model": "library.books",
+  "pk": 1,
+  "fields": {
+    "title": "Властелин колец",
+    "slug": "vlastelin-kolec",
+    "author": 1,
+    "image": "images/2023/11/16/The_LOTR.jpg",
+    "file": "books/Властелин_колец_Толкин_Джон_Рональд_Руэл_z-lib.org.fb2_mH68aa2.zip",
+    "description": "Джон Рональд Руэл Толкин (3.01.1892 — 2.09.1973) — писатель, поэт, филолог, профессор Оксфордского университета, родоначальник современной фэнтези. В 1937 году был написан «Хоббит», а в середине 1950-х годов увидели свет три книги «Властелина колец», повествующие о Средиземье — мире, населенном представителями волшебных рас со сложной культурой, историей и мифологией. Существует свыше десятка переводов трилогии на русский язык. В данное издание вошел перевод В. А. Маториной.",
+    "year": 2009,
+    "genre": "Фэнтази",
+    "language": "Русский",
+    "pages": 2134,
+    "ISBN": null,
+    "create_at": "2023-11-16T14:53:41.540Z",
+    "update_at": "2023-11-16T14:53:41.540Z"
+  }
+},
+{
+  "model": "library.books",
+  "pk": 2,
+  "fields": {
+    "title": "Девяносто третий год",
+    "slug": "devyanosto-tretij-god",
+    "author": 2,
+    "image": "images/2023/11/16/e522c54be38431706381eff0ee42db38.jpg",
+    "file": "books/Девяносто_третий_год_Гюго_Виктор_Z-Library_Iqbq80l.fb2",
+    "description": "Виктор Гюго (1802-1885) - один из самых ярких представителей прогрессивно-романтического течения французской литературы XIX века. В данное собрание вошли самые известные произведения автора.",
+    "year": 1876,
+    "genre": "Художественная",
+    "language": "Русский",
+    "pages": 1342,
+    "ISBN": null,
+    "create_at": "2023-11-16T14:56:53.504Z",
+    "update_at": "2023-11-16T14:56:53.504Z"
+  }
+},
+{
+  "model": "library.books",
+  "pk": 3,
+  "fields": {
+    "title": "Отверженные",
+    "slug": "otverzhennye",
+    "author": 2,
+    "image": "images/2023/11/16/30940500e8f4cf218d808cd9e62e7fb8.jpg",
+    "file": "books/Отверженные_Гюго_Виктор_Z-Library_gmnyxwJ.fb2",
+    "description": "В романе Виктора Гюго «Отверженные» рассказывается история Жана Вальжана, человека, который был заключён в тюрьму за кражу буханки хлеба и затем условно-досрочно освобождён. После того, как епископ проявил к нему доброту, Вальжан становится успешным бизнесменом, но его преследует безжалостный инспектор Жавер, а также вовлекает в жизнь Фантины, Козетты и студентов-революционеров Франции XIX века.",
+    "year": 1899,
+    "genre": "Художественная",
+    "language": "Русский",
+    "pages": 1312,
+    "ISBN": null,
+    "create_at": "2023-11-16T14:59:06.193Z",
+    "update_at": "2023-11-16T14:59:06.193Z"
+  }
+},
+{
+  "model": "library.bookreview",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "book": 1,
+    "review": "Крутая книга",
+    "rating": 5,
+    "create_at": "2023-11-17T14:38:53.023Z"
+  }
+},
+{
+  "model": "library.bookreview",
+  "pk": 2,
+  "fields": {
+    "user": 1,
+    "book": 1,
+    "review": "лопалвыап",
+    "rating": 4,
+    "create_at": "2023-11-18T11:46:45.197Z"
+  }
+}
+]
