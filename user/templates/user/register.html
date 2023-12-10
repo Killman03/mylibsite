@@ -16,7 +16,7 @@
             {% for f in form %}
             <div class="form-floating">
               {{ f}}
-              <label for="{{ f.id_for_label }}">{{ f.label }}</label>
+              <label class="text-black-50" for="{{ f.id_for_label }}">{{ f.label }}</label>
             </div>
             <div class="form-error text-white"> {{ f.errors }}</div>
             {% endfor %}

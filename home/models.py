@@ -1,8 +1,12 @@
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.db import models
 from django.urls import reverse
+from django.db.models.functions import Now
 
 
+class EventsManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(date__gte=Now())
 # Create your models here.
 class Setting(models.Model):
     STATUS = (
@@ -66,7 +70,7 @@ class Events(models.Model):
     location = models.CharField("Место проведения", blank=True, max_length=50)
     for_who = models.CharField('Для кого?', blank=True, max_length=50)
     descriptions = RichTextUploadingField("Описание", blank=True)
-    date = models.DateField('Дата события')
+    date = models.DateField('Дата события', db_index=True)
     start_time = models.TimeField('Время начала')
     end_time = models.TimeField("Время конца")
     is_important = models.BooleanField('Важное', default=False)
@@ -74,6 +78,10 @@ class Events(models.Model):
     status = models.CharField("Опубликовать", max_length=10, choices=STATUS, default=True)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
+
+    objects = models.Manager()
+    events_manager = EventsManager()
+
 
     def __str__(self):
         return self.title

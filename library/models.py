@@ -42,6 +42,8 @@ class Books(models.Model):
     def __str__(self):
         return self.title
 
+    # def total_books(self, ):
+
     def get_absolute_url(self):
         return reverse('book_page', kwargs={'book_slug': self.slug})
 

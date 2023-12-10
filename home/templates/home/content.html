@@ -1,4 +1,6 @@
 {% load static %}
+{% load home_tags %}
+
 <!-- Новостная карусель -->
   <section class="services">
     <div class="container">
@@ -351,13 +353,14 @@
                 <div class="col-12">
                   <div class="count-area-content percentage">
                     <div class="count-digit">{{ request.session.visits }}</div>
-                    <div class="count-title">Пользователей посетили наш сайт</div>
+                    <div class="count-title">Раз посетили наш сайт</div>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="count-area-content">
-                    <div class="count-digit">12345</div>
-                    <div class="count-title">Книги загруженно на наш сайт</div>
+                    {% get_book_counts as a %}
+                    <div class="count-digit">{{ a }}</div>
+                    <div class="count-title">Книг загруженно на наш сайт</div>
                   </div>
                 </div>
               </div>
@@ -365,15 +368,10 @@
             <div class="col-lg-6">
               <div class="row">
                 <div class="col-12">
-                  <div class="count-area-content new-students">
-                    <div class="count-digit">45</div>
-                    <div class="count-title">Часов проведенных на нашем сайте</div>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="count-area-content">
-                    <div class="count-digit">32</div>
-                    <div class="count-title">Количество зарегестрированных пользователей</div>
+                  <div class="count-area-content align-self-center">
+                    {% get_user_counts as a %}
+                    <div class="count-digit">{{ a }}</div>
+                    <div class="count-title">Количество зарегистрированных пользователей</div>
                   </div>
                 </div>
               </div>

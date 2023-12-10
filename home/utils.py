@@ -14,3 +14,4 @@ class DataMixin:
         context['item'] = setting
         context['menu_name'] = menu_name
         return context
+
