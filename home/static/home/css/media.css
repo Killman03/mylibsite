@@ -1,7 +1,29 @@
+@media (max-width: 1000px){
+    .services .item h4{
+        font-size: 16px;
+        font-weight: 400;
+        margin-top: 15px;
+    }
+
+    section.upcoming-meetings .categories {
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+
+    .section-heading h2{
+        margin-top: 60px;
+    }
+}
+
 @media (max-width: 500px){
     .services .item h4{
         font-size: 16px;
         font-weight: 400;
         margin-top: 15px;
+    }
+
+    section.upcoming-meetings .categories {
+        margin-right: 15px;
+        margin-left: 15px;
     }
 }

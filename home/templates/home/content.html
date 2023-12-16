@@ -28,12 +28,12 @@
   <section class="upcoming-meetings" id="meetings">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-12">
           <div class="section-heading">
             <h2>Библиотека</h2>
           </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4 col-sm-5 col-xs-4">
           <div class="categories">
             <h4>Книги по популярности</h4>
             {% for b in book %}
@@ -49,7 +49,7 @@
         <div class="col">
           <div class="row">
             {% for b in book %}
-              <div class="col-lg-3 col-md-3 col-sm-6">
+              <div class="col-lg-3 col-sm-3 d-xs-none">
                 <div class="card">
                   <a href="{{ b.get_absolute_url }}"><img src="{{ b.image.url }}" class="card-img-top" alt="Название книги 1"></a>
                 </div>

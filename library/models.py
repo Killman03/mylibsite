@@ -35,7 +35,7 @@ class Books(models.Model):
     genre = models.CharField("Жанр", max_length=30)
     language = models.CharField("Язык", max_length=20)
     pages = models.IntegerField(null=True, blank=True)
-    ISBN = models.IntegerField(null=True, blank=True)
+    ISBN = models.CharField(null=True, blank=True)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
