@@ -5,7 +5,7 @@ from .models import *
 
 @admin.register(Author)
 class AuthorAdmin(admin.ModelAdmin):
-    list_display = ['name', 'second_name']
+    list_display = ['name', 'second_name', 'middle_name']
     list_filter = ['name']
 
 @admin.register(Books)

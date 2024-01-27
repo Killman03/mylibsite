@@ -185,7 +185,6 @@ html.lb-disable-scrolling {
   width: 30px;
   height: 30px;
   margin-top: 15px;
-  background: url(../images/close.png) top right no-repeat;
   text-align: right;
   outline: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);

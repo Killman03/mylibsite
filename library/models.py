@@ -12,7 +12,7 @@ RATING = (
 
 class Author(models.Model):
     name = models.CharField("Имя", max_length=30, blank=False, null=False)
-    middle_name = models.CharField("Отчество", max_length=30)
+    middle_name = models.CharField("Отчество", max_length=30, blank=True, null=True)
     second_name = models.CharField("Фамилия", max_length=30)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
@@ -25,7 +25,7 @@ class Author(models.Model):
         verbose_name_plural = 'Авторы'
 
 class Books(models.Model):
-    title = models.CharField("Название", max_length=80)
+    title = models.CharField("Название", max_length=100)
     slug = models.CharField(max_length=80, unique=True, db_index=True, verbose_name='URL')
     author = models.ForeignKey('Author', blank=True, null=True, related_name='children', on_delete=models.CASCADE)
     image = models.ImageField("Обложка", upload_to='images/%Y/%m/%d/')

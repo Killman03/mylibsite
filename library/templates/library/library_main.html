@@ -22,11 +22,11 @@
             </h2>
             <div class="book_mosaic_line"></div>
         </div>
-          <div class="row">
+          <div class="row book-grid">
                 {% for b in book %}
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                  <div class="card">
-                <a href="{{ b.get_absolute_url }}"><img src="{{ b.image.url }}" class="card-img-top" alt="Название книги 1"></a>
+                <div class="col-lg-2 col-sm-4 col-6 mb-4">
+                  <div class="card book-size">
+                     <a href="{{ b.get_absolute_url }}"><img src="{{ b.image.url }}" class="card-img-top" alt="Название книги 1"></a>
                   </div>
                 </div>
                 {% endfor %}

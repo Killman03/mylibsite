@@ -7,6 +7,7 @@ register = template.Library()
 
 @register.inclusion_tag('home/show_meeting.html')
 def show_meetings():
+    all_count = Events.events_manager.count()
     all = Events.events_manager.get_queryset().all()
     soon = Events.events_manager.get_queryset().order_by('date')[:3]
     imp = Events.events_manager.get_queryset().filter(is_important=True)

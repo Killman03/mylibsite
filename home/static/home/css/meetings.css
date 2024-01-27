@@ -44,6 +44,7 @@ section.upcoming-meetings .categories ul li a {
   color: #1f272b;
   font-weight: 500;
   transition: all .3s;
+  font-family: 'Montserrat', sans-serif;
 }
 
 section.upcoming-meetings .categories ul li a:hover {

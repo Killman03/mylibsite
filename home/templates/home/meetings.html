@@ -13,7 +13,7 @@
             <div class="col-lg-12">
               <div class="filters">
                 <ul>
-                  <li data-filter=".total" class= "active">Все</li>
+                  <li data-filter=".total" class="active">Все</li>
                   <li data-filter=".soon">Ближайшие</li>
                   <li data-filter=".imp">Важные</li>
                   <li data-filter=".att">Интересные</li>
@@ -21,7 +21,7 @@
               </div>
             </div>
             <div class="col-lg-12">
-              <div class="row grid">
+              <div class="row grid gallery">
                 {% show_meetings %}
               </div>
             </div>
@@ -34,62 +34,90 @@
 <!-- Scripts -->
 <!-- Bootstrap core JavaScript -->
 <script src="{% static 'home/vendor/jquery/jquery.min.js' %}"></script>
-<script src="{% static 'home/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-
-<script src="{% static 'home/js/isotope.min.js' %}"></script>
+<script src="{% static 'home/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'home/js/isotope.js' %}"></script>
 <script src="{% static 'home/js/owl-carousel.js' %}"></script>
 <script src="{% static 'home/js/lightbox.js' %}"></script>
 <script src="{% static 'home/js/tabs.js' %}"></script>
-<script src="{% static 'home/js/video.js' %}"></script>
 <script src="{% static 'home/js/slick-slider.js' %}"></script>
 <script src="{% static 'home/js/custom.js' %}"></script>
 <script>
-    //according to loftblog tut
-    $('.nav li:first').addClass('active');
-
-    var showSection = function showSection(section, isAnimate) {
-      var
-      direction = section.replace(/#/, ''),
-      reqSection = $('.section').filter('[data-section="' + direction + '"]'),
-      reqSectionPos = reqSection.offset().top - 0;
-
-      if (isAnimate) {
-        $('body, html').animate({
-          scrollTop: reqSectionPos },
-        800);
-      } else {
-        $('body, html').scrollTop(reqSectionPos);
-      }
-
-    };
-
-    var checkSection = function checkSection() {
-      $('.section').each(function () {
-        var
-        $this = $(this),
-        topEdge = $this.offset().top - 80,
-        bottomEdge = topEdge + $this.height(),
-        wScroll = $(window).scrollTop();
-        if (topEdge < wScroll && bottomEdge > wScroll) {
-          var
-          currentId = $this.data('section'),
-          reqLink = $('a').filter('[href*=\\#' + currentId + ']');
-          reqLink.closest('li').addClass('active').
-          siblings().removeClass('active');
+  $(window).onload = function() {
+        var totalel = getElementsByClassName('total');
+        console.log('Working...')
+        for (var i = 0; i < totalel.length; i++) {
+            totalel[i].style.display = 'block';
         }
-      });
     };
+</script>
+<script>
+  //according to loftblog tut
+  $('.nav li:first').addClass('active');
 
-    $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
-      e.preventDefault();
-      showSection($(this).attr('href'), true);
-    });
+  var showSection = function showSection(section, isAnimate) {
+    var
+    direction = section.replace(/#/, ''),
+    reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+    reqSectionPos = reqSection.offset().top - 0;
 
-    $(window).scroll(function () {
-      checkSection();
+    if (isAnimate) {
+      $('body, html').animate({
+        scrollTop: reqSectionPos },
+      800);
+    } else {
+      $('body, html').scrollTop(reqSectionPos);
+    }
+
+  };
+
+  var checkSection = function checkSection() {
+    $('.section').each(function () {
+      var
+      $this = $(this),
+      topEdge = $this.offset().top - 80,
+      bottomEdge = topEdge + $this.height(),
+      wScroll = $(window).scrollTop();
+      if (topEdge < wScroll && bottomEdge > wScroll) {
+        var
+        currentId = $this.data('section'),
+        reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+        reqLink.closest('li').addClass('active').
+        siblings().removeClass('active');
+      }
     });
+  };
+
+  $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+    e.preventDefault();
+    showSection($(this).attr('href'), true);
+  });
+
+  $(window).scroll(function () {
+    checkSection();
+  });
 </script>
 
+<!-- Isotope Filter Link-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+<!--
+
+<script type="text/javascript">
+  var $galleryContainer = $('.gallery').isotope({
+    itemSelector: '.meeting-item',
+    layoutMode: 'fitRows'
+  })
+
+  $('.filters ul li').on('click', function(){
+    $('.filters ul li').removeClass('active');
+    $(this).addClass('active');
+
+    var value = $(this).attr('data-filter');
+    $galleryContainer.isotope({
+      filter: value
+  })
+</script>
+-->
 
 {% endblock %}
 {% block footer %} {% include 'home/footer.html' %} {% endblock %}

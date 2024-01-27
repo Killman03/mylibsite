@@ -1,39 +1,18 @@
 {% load static %}
 {% load home_tags %}
 
-<!-- Новостная карусель -->
-  <section class="services">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="owl-service-item owl-carousel">
-            {% for rs in meetings_slider %}
-            <div class="item">
-              <div class="icon">
-                <img src="{% static 'home/images/service-icon-02.png' %}" alt="">
-              </div>
-              <div class="down-content">
-                <h4>{{ rs.title }}</h4>
-                <p>{{ rs.details }}</p>
-              </div>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-<!--Конец новостной корусели-->
 <!--Block mini library -->
   <section class="upcoming-meetings" id="meetings">
     <div class="container">
       <div class="row">
+        <!--Title -->
         <div class="col-12">
           <div class="section-heading">
             <h2>Библиотека</h2>
           </div>
         </div>
-        <div class="col-lg-4 col-sm-5 col-xs-4">
+        <!--Left text menu-->
+        <div class="col-lg-4 mini-library__text">
           <div class="categories">
             <h4>Книги по популярности</h4>
             {% for b in book %}
@@ -46,10 +25,11 @@
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="row">
+        <!--Right img menu-->
+        <div class="col-lg-8 col-sm-auto">
+          <div class="row g-3">
             {% for b in book %}
-              <div class="col-lg-3 col-sm-3 d-xs-none">
+              <div class="col-lg-3 col-md-4 col-6">
                 <div class="card">
                   <a href="{{ b.get_absolute_url }}"><img src="{{ b.image.url }}" class="card-img-top" alt="Название книги 1"></a>
                 </div>
@@ -387,6 +367,12 @@
     </div>
   </section>
 <!--Endblock facts-->
+<!--Contanct_us block-->
+  <section class="contact-us-home">
+
+    {% include 'home/contacts_content.html' %}
+  </section>
+<!--Contanct_us endblock-->
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
     <script src="{% static 'home/jquery/jquery.min.js' %}"></script>

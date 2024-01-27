@@ -1,4 +1,4 @@
-@media (max-width: 1000px){
+@media (max-width: 992px){
     .services .item h4{
         font-size: 16px;
         font-weight: 400;
@@ -13,9 +13,21 @@
     .section-heading h2{
         margin-top: 60px;
     }
+
+    .main-banner {
+        margin-bottom: -100px;
+    }
+
+    .mini-library__text{
+        display: none;
+    }
+
+    .contact-us__right-info{
+        display:none;
+    }
 }
 
-@media (max-width: 500px){
+@media (max-width: 576px){
     .services .item h4{
         font-size: 16px;
         font-weight: 400;
@@ -26,4 +38,13 @@
         margin-right: 15px;
         margin-left: 15px;
     }
+
+}
+
+
+@media (max-width: 350px){
+    .footer_third_col{
+        display:none;
+    }
+
 }

@@ -3,25 +3,25 @@
 {% load static %}
 
 {% block content %}
-  <div class="book_page">
+  <div class="book__page">
       <div class="container text-center">
-        <div class="row justify-content-between">
-          {% if book.image %}
-          <div class="col-4">
-            <p style="width: 350px;"><img src="{{ book.image.url }}" class="img-fluid" alt="book_photo"></p>
+        <div class="row text-center-xs no-justify-content-between-sm">
+          <div class="col-xs-12 col-md-6 col-lg-4 book__img">
+            {% if book.image %}
+            <p><img src="{{ book.image.url }}" class="img-fluid" alt="book_photo"></p>
+            {% endif %}
           </div>
-          {% endif %}
-          <div class="col-7">
-            <div class="book_title">
+          <div class="col-xs-12 col-md-6 col-lg-8">
+            <div class="book__title">
               <h1>{{ book.title }}</h1>
             </div>
-            <i style="text-align:left;">
-              {{ book.author }}
-            </i>
+            <div style="text-align:left;">
+              {{ book.author.name }} {{ book.author.middle_name|default:"" }} {{ book.author.second_name }}
+            </div>
             <div class="book_description" style="text-align:left">
               {{ book.description }}
             </div>
-            <div class="book_details_box d-flex flex-column justify-content-end">
+            <div class="book__details__box flex-column align-self-end">
               <div class="row row-cols-2">
                 <div class="book_language">
                   <div class="property_label">Language:</div>
@@ -29,11 +29,11 @@
                 </div>
                 <div class="book_pages">
                   <div class="property_label">Pages:</div>
-                  <div class="col book">{{ book.pages }}</div>
+                  <div class="col book">{{ book.pages|default:'Неизвестно' }}</div>
                 </div>
                 <div class="book_year">
                   <div class="property_label">Year:</div>
-                  <div class="col book">{{ book.year }}</div>
+                  <div class="col book">{{ book.year|default:"Неизвестно" }}</div>
                 </div>
                 <div class="book_genre">
                   <div class="property_label">Genre:</div>
@@ -44,13 +44,13 @@
           </div>
         </div>
         <div class="row my-5">
-          <div class="col download_button">
+          <div class="col col-sm-4 download_button">
             <button type="button" class="btn"><a href="{{ book.file.url }}">Скачать</button></a>
           </div>
-          <div class="col">
+          <div class="col col-sm-4">
             <h6 class="avg_rating mt-3">{{ average_rating.rating|floatformat:1 }}/5,0</h6>
           </div>
-          <div class="col">
+          <div class="col-12 col-sm-4">
             <div class="share_buttons">
               <a href="https://telegram.me/share/url?url=http://127.0.0.1:8000/{{ book.get_absolute_url }}&text=Привет! Я нашёл этот замечательную книгу, думаю, тебе понравится!" target="_blank">
                   <i class="bi bi-telegram"></i>
@@ -69,16 +69,15 @@
             <span style="float:left">Вам может понравиться</span>
           </h2>
           <div class="book_mosaic_line"></div>
-          <div class="row">
+          <div class="row gy-3">
             {% for b in recommended_books %}
-              <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
-                <div class="card">
+              <div class="col-lg-2 col-md-4 col-6">
+                <div class="book__card__img">
               <a href="{{ b.get_absolute_url }}"><img src="{{ b.image.url }}" class="card-img-top" alt="Название книги 1"></a>
                 </div>
               </div>
             {% endfor %}
           </div>
-
         </div>
         <div>
           <h2 class="book_mosaic_text">

@@ -7,7 +7,7 @@ banner
 .main-banner {
   position: relative;
   max-height: 100%;
-  overflow: hidden;
+  overflow: visible;
   margin-bottom: -7px;
 }
 
@@ -95,7 +95,7 @@ services
 */
 
 .services {
-  margin-top: -135px;
+  bottom: -15%;
   position: absolute;
   width: 100%;
 }
@@ -614,10 +614,6 @@ responsive
 
   .main-banner .caption .main-button-red {
     margin-top: 15px;
-  }
-
-  .services {
-    margin-top: 60px;
   }
 
   section.upcoming-meetings {

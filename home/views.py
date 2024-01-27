@@ -15,8 +15,10 @@ class Home(DataMixin, ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         c_def = self.get_user_context()
+        form = contact_form_process(self.request)
         context['meetings_slider'] = Events.objects.all().order_by('start_time')[:5]
         context['book'] = Books.objects.all().order_by('-id')[:8]
+        context['form'] = form
         return context | c_def
 
     def get_queryset(self):
@@ -39,19 +41,7 @@ class Meetings(DataMixin, ListView):
 
 
 def contacts(request):
-    if request.method == 'POST':  # check post
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            data = ContactMessage()  # create relation with model
-            data.name = form.cleaned_data['name']
-            data.your_email = form.cleaned_data['your_email']
-            data.subject = form.cleaned_data['subject']
-            data.your_message = form.cleaned_data['your_message']
-            data.ip = request.META.get('REMOTE_ADDR')
-            data.save()  # save data to database
-            messages.success(request, 'Uraaa')
-            return HttpResponseRedirect('contacts')
-    form = ContactForm
+    form = contact_form_process(request)
     context = {
         'item': Setting.objects.get(pk=1),
         'menu_name': menu_name,
@@ -87,4 +77,20 @@ def support_project(request):
     }
     return render(request, 'home/support_project.html', context=context)
 
+
+def contact_form_process(request):
+    if request.method == 'POST':  # check post
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            data = ContactMessage()  # create relation with model
+            data.name = form.cleaned_data['name']
+            data.your_email = form.cleaned_data['your_email']
+            data.subject = form.cleaned_data['subject']
+            data.your_message = form.cleaned_data['your_message']
+            data.ip = request.META.get('REMOTE_ADDR')
+            data.save()  # save data to database
+            messages.success(request, 'Uraaa')
+            return HttpResponseRedirect('contacts')
+    form = ContactForm
+    return form
 # Create your views here.
