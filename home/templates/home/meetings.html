@@ -33,7 +33,6 @@
 
 <!-- Scripts -->
 <!-- Bootstrap core JavaScript -->
-<script src="{% static 'home/vendor/jquery/jquery.min.js' %}"></script>
 <script src="{% static 'home/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'home/js/isotope.js' %}"></script>
 <script src="{% static 'home/js/owl-carousel.js' %}"></script>
@@ -42,14 +41,12 @@
 <script src="{% static 'home/js/slick-slider.js' %}"></script>
 <script src="{% static 'home/js/custom.js' %}"></script>
 <script>
-  $(window).onload = function() {
-        var totalel = getElementsByClassName('total');
-        console.log('Working...')
-        for (var i = 0; i < totalel.length; i++) {
-            totalel[i].style.display = 'block';
-        }
-    };
+  let totalel = getElementsByClassName('total');
+  for (let i = 0; i < totalel.length; i++) {
+      console.log(totalel[i].style.display = 'block')
+  };
 </script>
+
 <script>
   //according to loftblog tut
   $('.nav li:first').addClass('active');
@@ -67,7 +64,6 @@
     } else {
       $('body, html').scrollTop(reqSectionPos);
     }
-
   };
 
   var checkSection = function checkSection() {
