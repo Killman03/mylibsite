@@ -14,6 +14,20 @@
 	  }
 	});
 
+    $(document).ready(function() {
+      $('.all').hide();
+
+      $('.total').show();
+    });
+
+    (function showPlaceholderTextInH1() {
+      const h1 = document.getElementsByClassName("all");
+
+      if (h1.style.display === "none") {
+        h1.innerHTML = "Скоро появится";
+      }
+    })
+
 	
 	$('.filters ul li').on('click', function(){
         $('.filters ul li').removeClass('active');
@@ -107,7 +121,7 @@
 	  for (let i = 0; i < accordions.length; i++) {
 	    Accordion.init(accordions[i]);
 	  }
-	})();
+	});
 
 
 	$('.owl-service-item').owlCarousel({
