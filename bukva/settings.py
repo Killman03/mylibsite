@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-rf&t25fd)7rt!bt^0me80$hqhzsc9^h1)r65zvmq$4-2q^*(3!"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     "library.apps.LibraryConfig",
     "user.apps.UserConfig",
     "ckeditor",
-    'debug_toolbar'
 ]
 
 MIDDLEWARE = [
@@ -85,7 +84,7 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": "library",
-        "USER": "postgres",
+        "USER": "librarian",
         "PASSWORD": "1234567890",
         "HOST": 'localhost',
         'PORT': '5432',
@@ -122,6 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
