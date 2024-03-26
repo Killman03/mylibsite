@@ -11,8 +11,8 @@ RATING = (
 )
 
 class Author(models.Model):
-    name = models.CharField("Имя", max_length=30, blank=False, null=False)
-    middle_name = models.CharField("Отчество", max_length=30, blank=True, null=True)
+    name = models.CharField("Имя", max_length=30, blank=False, null=True)
+    middle_name = models.CharField("Отчество", max_length=30, blank=True, null=False)
     second_name = models.CharField("Фамилия", max_length=30)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
